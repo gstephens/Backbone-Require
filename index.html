@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js ui-mobile-rendering" lang="en">
+<head>
+      <title>Backbone.js, Require.js, and jQuery Mobile</title>
+      <meta name="description" content="">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.css" />
+      <script src="js/libs/require.js" data-main="js/mobile"></script>
+      <script>
+
+      </script>
+</head>
+<body>
+
+      <div id="categories" data-role="page" data-title="Categories">
+
+            <div data-role="header">
+                  <h1>TourneyCard</h1>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                  <h2>Select a Category Below:</h2>
+                  <ul data-role="listview" data-inset="true">
+                        <li><a href="#category?animals" class="animals">Animals</a></li>
+                        <li><a href="#category?colors" class="colors">Colors</a></li>
+                        <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+                        <li><a href="#category?golfers" class="vehicles">Golfers</a></li>
+                  </ul>
+            </div><!-- /content -->
+
+      </div>
+
+      <div id="login" data-role="page" data-title="Login">
+
+            <div data-role="header">
+                  <h1>TourneyCard</h1>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                  <h1>Broadmoor Tourneycard</h1>
+                  <p>
+                    <label for="username">Username:</label>
+                    <input name="username" id="username"
+                    class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c exampled"
+                    type="text" title="Username:..."
+                    value="">
+              </p>
+
+              <p>
+                    <label for="password">Password:</label>
+                    <input name="password" id="password"
+                    class="password ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c exampled"
+                    type="password" title="Password:..."
+                    value="">
+              </p>
+
+              <input type="submit" form="loginForm" name="login" elementId="loginButton" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c" data-theme="c" value="Log in" id="login" />
+        </div><!-- /content -->
+
+  </div>
+
+  <div id="animals" data-role="page" data-title="Animals">
+
+      <div data-role="header">
+       <h1>Animals</h1>
+ </div><!-- /header -->
+
+ <div data-role="content">
+      <ul data-role="listview" data-inset="true">
+      </ul>
+</div><!-- /content -->
+</div>
+
+<div id="colors" data-role="page" data-title="Colors">
+
+      <div data-role="header">
+       <h1>Colors</h1>
+ </div><!-- /header -->
+
+ <div data-role="content">
+      <ul data-role="listview" data-inset="true">
+      </ul>
+</div><!-- /content -->
+
+</div>
+
+<div id="vehicles" data-role="page" data-title="Vehicles">
+
+      <div data-role="header">
+        <h1>Vehicles</h1>
+  </div><!-- /header -->
+  
+  <div data-role="content">
+      <ul data-role="listview" data-inset="true">
+      </ul>
+</div><!-- /content -->
+
+</div>
+
+<div id="golfers" data-role="page" data-title="Golfers">
+
+      <div data-role="header">
+       <h1>Golfers</h1>
+ </div><!-- /header -->
+
+ <div data-role="content">
+      <ul data-role="listview" data-inset="true">
+
+      </ul>
+</div><!-- /content -->
+
+</div>
+
+<!-- Underscore Template that is used to display all of the Category Models -->
+<script id="categoryItems" type="text/template">
+
+<% _.each( collection.toJSON(), function( category, id ) { %>
+
+      <li class="ui-li ui-li-static ui-btn-up-c ui-corner-top">
+      <%= category.type %>
+      </li>
+
+      <% }); %>
+
+</script>
+
+<script id="golferItems" type="text/template">
+
+<% _.each( collection.toJSON(), function( golfer, id ) { %>
+
+      <li class="ui-li ui-li-static ui-btn-up-c ui-corner-top">
+      <%= golfer.name %>
+      </li>
+
+      <% }); %>
+
+</script>
+
+</body>
+</html>
